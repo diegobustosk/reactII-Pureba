@@ -24,7 +24,7 @@ function Home({ pizzas }) {
           <div key={pizza.id} className="pizza-item">
             <img src={pizza.img} alt={pizza.name} className="pizza-image" />
             <h3>{pizza.name}</h3>
-            <p className="pizza-ingredients">
+            <p className="pizza-ingredients-home">
               <strong>Ingredientes:</strong> {pizza.ingredients.join(', ')}
             </p>
             <p>Precio: ${pizza.price}</p>

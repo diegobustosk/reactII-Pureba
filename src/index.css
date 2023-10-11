@@ -128,3 +128,38 @@ button:focus-visible {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.detail-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.detail-container img {
+  height: 400px;
+  width: 400px;
+  margin-top: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.detail-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pizza-ingredients {
+  list-style-type: none; 
+  padding: 0; 
+  width: 25%;
+}
+
+.pizza-ingredients li {
+  display: flex;
+  align-items: center; 
+  align-items: flex-start;
+  margin-left: 1.5rem;
+
+}
+
+

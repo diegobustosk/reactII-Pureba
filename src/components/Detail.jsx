@@ -26,15 +26,25 @@ function Details({ pizzas }) {
   }
 
   return (
-    <div>
-      <h1>Detalles de {pizza.name}</h1>
-      <img src={pizza.img} alt={pizza.name} />
-      <p>{pizza.desc}</p>
-      <p className="pizza-ingredients">
-        <strong>Ingredientes:</strong> {pizza.ingredients.join(', ')}
-      </p>
-      <p>Precio: ${pizza.price}</p>
-      <button className="btn-add-to-cart" onClick={() => addToCart(pizza)}>Añadir al Carrito</button>
+    <div className='detail-container'>
+      <img className='detail-left' src={pizza.img} alt={pizza.name} />
+      <div className='detail-right'>
+        <h1> Pizza {pizza.name}</h1>
+        <p>{pizza.desc}</p>
+        <p className="pizza-ingredients">
+        <strong>Ingredientes:</strong>
+    </p>
+    <ul className="pizza-ingredients">
+      {pizza.ingredients.map((ingredient, index) => (
+        <li key={index}>
+        🍕 {ingredient}
+        </li>
+      ))}
+    </ul>
+        
+        <p>Precio: ${pizza.price}</p>
+        <button className="btn-add-to-cart" onClick={() => addToCart(pizza)}>Añadir al Carrito</button>
+      </div>
     </div>
   );
 }
