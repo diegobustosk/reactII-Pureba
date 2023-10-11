@@ -1,18 +1,35 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { ShoppingContext } from "../context/ShoppingContext";
 
+function Navbar({pizzas}) {
+  const { shopping, setShopping } = useContext(ShoppingContext);
 
-function Navbar() {
-  const setActiveClass = ({ isActive }) => (isActive ? "active" : undefined)
+  // Calcular el total del carrito
+  const total = Object.keys(shopping).reduce((acc, pizzaId) => {
+    const pizza = pizzas.find((p) => p.id === pizzaId);
+    if (pizza) {
+      const pizzaPrice = pizza.price;
+      const pizzaCount = shopping[pizzaId];
+      return acc + pizzaPrice * pizzaCount;
+    }
+    return acc;
+  }, 0);
+
   return (
     <>
       <header>
         <div className="navbar-link">
-          <NavLink className={ setActiveClass } to='/'> Pizzeria Mama Mía 🍕 </NavLink>
-          <NavLink className={ setActiveClass } to='/:id'>  🛒 </NavLink>
+          <NavLink  to="/">
+            Pizzeria Mama Mía 🍕
+          </NavLink>
+          <NavLink to="/carrito">
+            🛒 {total.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })} CLP
+          </NavLink>
         </div>
       </header>
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

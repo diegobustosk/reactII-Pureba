@@ -3,9 +3,9 @@ export const ShoppingContext = createContext();
 
 
 const ShoppingProvider = ({ children }) => {
-    const [Shopping, setShopping] = useState(null);
+    const [shopping, setShopping] = useState({});
     return (
-    <ShoppingContext.Provider value={{ Shopping, setShopping }}>
+    <ShoppingContext.Provider value={{ shopping, setShopping }}>
     {children}
     </ShoppingContext.Provider>
     );

@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Details from './components/Detail'
+import Carrito from './components/ShoppingCart';
 import { Route, Routes } from 'react-router'
 
 function App() {
@@ -27,10 +28,11 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar pizzas={pizzas}/>
       <Routes>
       <Route path="/" element={<Home pizzas={pizzas} />} />
       <Route path="/pizza/:pizzaName" element={<Details pizzas={pizzas} />} />
+      <Route path="/carrito" element={<Carrito pizzas={pizzas} />} />
       </Routes>
     </>
   )
