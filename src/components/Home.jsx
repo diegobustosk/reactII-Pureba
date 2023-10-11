@@ -11,17 +11,10 @@ function Home({ pizzas }) {
       updatedCart[pizza.id] += 1;
     } else {
       updatedCart[pizza.id] = 1;
-    }
-
-    console.log(pizza.id)
-    console.log(shopping)
-    
+    }    
     setShopping(updatedCart)
   }
 
-  useEffect(() => {
-    console.log(shopping);
-  }, [shopping]);
 
   return (
     <div>
