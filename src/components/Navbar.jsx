@@ -24,7 +24,7 @@ function Navbar({pizzas}) {
             Pizzeria Mama Mía 🍕
           </NavLink>
           <NavLink to="/carrito">
-            🛒 {total.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })} CLP
+          <h3>🛒 {total.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })} CLP</h3>
           </NavLink>
         </div>
       </header>
